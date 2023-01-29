@@ -13,7 +13,7 @@
 		color: #FFF;
 	}
 	
-	.adsbx-green {
+	.Adsb-green {
 		color: #FFF;
 	}
 	
@@ -61,7 +61,7 @@
 
 <center>
 
-<h2>ADSBexchange.com<br />
+<h2>Adsb<br />
 Custom Image - System Info</h2><a href="../">(..back to main menu)</a><br /><br />
 
 <table class="table table-dark">
@@ -120,7 +120,7 @@ echo "<pre>$output</pre>";
 
 <table class="table table-dark"><tr><td>
 <?php
-$output = shell_exec('sudo /adsbexchange/webconfig/helpers/zerotier_status.sh | head -n 1');
+$output = shell_exec('sudo /Adsb/webconfig/helpers/zerotier_status.sh | head -n 1');
 echo "<pre>$output</pre>";
 ?>
 </td></tr>
@@ -146,10 +146,10 @@ echo "Since $upsince</pre></center>";
 
 <table class="table table-dark"><tr><td>
 <?php
-$output = shell_exec('sudo /adsbexchange/update/throttle.sh 2>&1');
+$output = shell_exec('sudo /Adsb/update/throttle.sh 2>&1');
 echo "<pre>$output</pre>";
 echo "</td></tr><tr><td>";
-$temp = shell_exec('sudo /adsbexchange/webconfig/helpers/show_temperature.sh');
+$temp = shell_exec('sudo /Adsb/webconfig/helpers/show_temperature.sh');
 echo "<center><pre>CPU $temp";
 echo "Redline=80'C</pre></center>";
 ?>
@@ -165,9 +165,9 @@ echo "Redline=80'C</pre></center>";
 
 <table class="table table-dark"><tr><td>
 <?php
-$messages1090 = number_format(shell_exec('cat /run/adsbexchange-feed/aircraft.json | jq .messages'));
-$messages978 = number_format(shell_exec('cat /run/adsbexchange-978/aircraft.json | jq .messages'));
-$totaltracks = number_format(shell_exec('cat /run/adsbexchange-feed/stats.json | jq .total.tracks.all'));
+$messages1090 = number_format(shell_exec('cat /run/Adsb-feed/aircraft.json | jq .messages'));
+$messages978 = number_format(shell_exec('cat /run/Adsb-978/aircraft.json | jq .messages'));
+$totaltracks = number_format(shell_exec('cat /run/Adsb-feed/stats.json | jq .total.tracks.all'));
 echo "<pre>1090mhz: $messages1090<br>978mhz: $messages978<br>Tracks: $totaltracks</pre>";
 ?>
 </td></tr>
@@ -187,7 +187,7 @@ echo "<pre>$sdrserials</pre>";
 
 
  <br>
- Position Count By Type: <a href="https://www.adsbexchange.com/version-2-api-wip/" target="_blank">(info)</a>
+ Position Count By Type: <a href="https://www.Adsb.com/version-2-api-wip/" target="_blank">(info)</a>
 
 <table class="table table-dark">
 
@@ -199,10 +199,10 @@ echo "<pre>$sdrserials</pre>";
 </tr>
 
 <?php
-$pos1min = shell_exec('cat /run/adsbexchange-feed/stats.json | jq .last1min.position_count_by_type');
-$pos5min = shell_exec('cat /run/adsbexchange-feed/stats.json | jq .last5min.position_count_by_type');
-$pos15min = shell_exec('cat /run/adsbexchange-feed/stats.json | jq .last15min.position_count_by_type');
-$postotal = shell_exec('cat /run/adsbexchange-feed/stats.json | jq .total.position_count_by_type');
+$pos1min = shell_exec('cat /run/Adsb-feed/stats.json | jq .last1min.position_count_by_type');
+$pos5min = shell_exec('cat /run/Adsb-feed/stats.json | jq .last5min.position_count_by_type');
+$pos15min = shell_exec('cat /run/Adsb-feed/stats.json | jq .last15min.position_count_by_type');
+$postotal = shell_exec('cat /run/Adsb-feed/stats.json | jq .total.position_count_by_type');
 ?>
 
 <tr>
@@ -278,7 +278,7 @@ echo "<pre>$output</pre>";
 <div class="table-responsive-lg">
 <table class="table table-dark"><tr><td>
 <?php
-$output = shell_exec('sudo /adsbexchange/webconfig/helpers/journal.sh -u readsb.service');
+$output = shell_exec('sudo /Adsb/webconfig/helpers/journal.sh -u readsb.service');
 echo "<pre>$output</pre>";
 ?>
 </td></tr>
@@ -291,7 +291,7 @@ echo "<pre>$output</pre>";
 <div class="table-responsive-lg">
 <table class="table table-dark"><tr><td>
 <?php
-$output = shell_exec('sudo /adsbexchange/webconfig/helpers/journal.sh -u dump978-fa.service');
+$output = shell_exec('sudo /Adsb/webconfig/helpers/journal.sh -u dump978-fa.service');
 echo "<pre>$output</pre>";
 ?>
 </td></tr>
@@ -304,7 +304,7 @@ echo "<pre>$output</pre>";
 <div class="table-responsive-lg">
 <table class="table table-dark"><tr><td>
 <?php
-$output = shell_exec('sudo /adsbexchange/webconfig/helpers/journal.sh -u autogain1090.service');
+$output = shell_exec('sudo /Adsb/webconfig/helpers/journal.sh -u autogain1090.service');
 echo "<pre>$output</pre>";
 ?>
 </td></tr>
@@ -317,7 +317,7 @@ echo "<pre>$output</pre>";
 <div class="table-responsive-lg">
 <table class="table table-dark"><tr><td>
 <?php
-$output = shell_exec('sudo /adsbexchange/webconfig/helpers/journal.sh -u tar1090.service');
+$output = shell_exec('sudo /Adsb/webconfig/helpers/journal.sh -u tar1090.service');
 echo "<pre>$output</pre>";
 ?>
 </td></tr>
@@ -328,62 +328,62 @@ echo "<pre>$output</pre>";
 
 <table class="table table-dark"><tr><td>
 <?php
-$output = shell_exec('sudo /adsbexchange/webconfig/helpers/journal.sh -u tar1090-978.service | /adsbexchange/webconfig/sanitize-uuid.sh');
+$output = shell_exec('sudo /Adsb/webconfig/helpers/journal.sh -u tar1090-978.service | /Adsb/webconfig/sanitize-uuid.sh');
 echo "<pre>$output</pre>";
 ?>
 </td></tr>
 </table>
 
  <br>
- adsbexchange-feed.service logs:
+ Adsb-feed.service logs:
 
 <table class="table table-dark"><tr><td>
 <?php
-$output = shell_exec('sudo /adsbexchange/webconfig/helpers/journal.sh -u adsbexchange-feed.service | /adsbexchange/webconfig/sanitize-uuid.sh');
+$output = shell_exec('sudo /Adsb/webconfig/helpers/journal.sh -u Adsb-feed.service | /Adsb/webconfig/sanitize-uuid.sh');
 echo "<pre>$output</pre>";
 ?>
 </td></tr>
 </table>
 
  <br>
- adsbexchange-mlat.service logs:
+ Adsb-mlat.service logs:
 
 <table class="table table-dark"><tr><td>
 <?php
-$output = shell_exec('sudo /adsbexchange/webconfig/helpers/journal.sh -u adsbexchange-mlat.service | /adsbexchange/webconfig/sanitize-uuid.sh');
+$output = shell_exec('sudo /Adsb/webconfig/helpers/journal.sh -u Adsb-mlat.service | /Adsb/webconfig/sanitize-uuid.sh');
 echo "<pre>$output</pre>";
 ?>
 </td></tr>
 </table>
 
  <br>
- adsbexchange-stats.service logs:
+ Adsb-stats.service logs:
 
 <table class="table table-dark"><tr><td>
 <?php
-$output = shell_exec('sudo /adsbexchange/webconfig/helpers/journal.sh -u adsbexchange-stats.service | /adsbexchange/webconfig/sanitize-uuid.sh');
+$output = shell_exec('sudo /Adsb/webconfig/helpers/journal.sh -u Adsb-stats.service | /Adsb/webconfig/sanitize-uuid.sh');
 echo "<pre>$output</pre>";
 ?>
 </td></tr>
 </table>
 
  <br>
- /boot/adsbx-env
+ /boot/Adsb-env
 
 <table class="table table-dark"><tr><td>
 <?php
-$output = shell_exec('cat /boot/adsbx-env');
+$output = shell_exec('cat /boot/Adsb-env');
 echo "<pre>$output</pre>";
 ?>
 </td></tr>
 </table>
 
  <br>
- /boot/adsbx-978env
+ /boot/Adsb-978env
 
 <table class="table table-dark"><tr><td>
 <?php
-$output = shell_exec('cat /boot/adsbx-978env');
+$output = shell_exec('cat /boot/Adsb-978env');
 echo "<pre>$output</pre>";
 ?>
 </td></tr>
@@ -394,7 +394,7 @@ echo "<pre>$output</pre>";
 
 <table class="table table-dark"><tr><td>
 <?php
-$output = shell_exec('cat /adsbexchange/adsbx-update.log');
+$output = shell_exec('cat /Adsb/Adsb-update.log');
 echo "<pre>$output</pre>";
 ?>
 </td></tr>
