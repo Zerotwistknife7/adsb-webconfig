@@ -51,7 +51,7 @@
 <body class="container-margin">
 	<div class="container-sm">
 		<div class="d-grid gap-1 col-0 mx-auto">
-			<h4 class="Adsb-green logo-margin"><img src="img/logo.svg" width="35"/>  Adsb.com</h4>
+			<h4 class="Adsb-green logo-margin"><img src="img/logo.svg" width="35"/>  https://github.com/zerotwistknife7/</h4>
             <h6>version image <?php echo file_get_contents("/boot/Adsb-version"); ?><br>
             version ADS-B software <?php echo file_get_contents("/boot/Adsb-version-decoder"); ?><br>
             version webconfig <?php echo file_get_contents("/boot/Adsb-version-webconfig"); ?></h6>

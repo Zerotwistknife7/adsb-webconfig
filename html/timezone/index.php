@@ -65,7 +65,7 @@ if ($_SESSION['authenticated'] != 1) {
 
     <center>
 
-    <h4 class="Adsb-green logo-margin"><img src="../img/logo.svg" width="35"/>  Adsb.com</h4>
+    <h4 class="Adsb-green logo-margin"><img src="../img/logo.svg" width="35"/>  https://github.com/zerotwistknife7/</h4>
     <h6>Adsb ADS-B Anywhere <br />version <?php echo file_get_contents("/boot/Adsb-version"); ?></h6>
         <a class="btn btn-primary" href="../">(..back to main menu)</a><br /><br />
     <form method='POST' action="./index.php" onsubmit="return confirm('Change Timezone?');">

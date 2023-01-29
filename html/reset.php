@@ -26,7 +26,7 @@ tr:nth-child(even) {
 
 <center>
 
-<h2>Adsb.com<br>
+<h2>https://github.com/zerotwistknife7/<br>
 Custom Image - Reset to Defaults</h2><a href="../index.php">(..back to main menu)</a><br><br>
 
 Resets unit to out of box defaults.<br><b>Including network configuration!</b>

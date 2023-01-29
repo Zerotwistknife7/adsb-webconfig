@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <center>
 
-<h4 class="Adsb-green logo-margin"><img src="../img/logo.svg" width="35"/>  Adsb.com</h4>
+<h4 class="Adsb-green logo-margin"><img src="../img/logo.svg" width="35"/>  https://github.com/zerotwistknife7/</h4>
 <a class="btn btn-primary" href="../">(..back to main menu)</a><br /><br />
 
 <h3>Configure other feed clients:</h3>
